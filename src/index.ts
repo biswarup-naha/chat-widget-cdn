@@ -1,13 +1,7 @@
-// import habitat from 'preact-habitat';
+import habitat from 'preact-habitat';
 import App from './component';
 import { h, render } from 'preact';
 
-// const _habitat = habitat(Widget);
-
-// _habitat.render({
-//   selector: '[data-widget-host="habitat"]',
-//   clean: true
-// });
 
 const root = document.getElementById('root');
 root.attachShadow({ mode: 'open' });
@@ -60,5 +54,12 @@ h1 {
 `;
 
 root.shadowRoot.appendChild(style);
+
+const _habitat = habitat(App);
+
+_habitat.render({
+  selector: '[data-widget-host="habitat"]',
+  clean: true
+});
 
 render(h(App,null), root.shadowRoot);
